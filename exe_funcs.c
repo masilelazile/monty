@@ -15,9 +15,9 @@ void tokenize(char *line_buf, unsigned int count, stack_t **stack)
 	const char *delim = " \n\t";
 	char *token = strtok(line_buf, delim);
 	char *op = NULL, *value = NULL;
-	
+
 	int i = 0;
-	
+
 	while (token != NULL && i < 2)
 	{
 		if (i == 0)
@@ -29,7 +29,7 @@ void tokenize(char *line_buf, unsigned int count, stack_t **stack)
 	}
 	if (i > 0)
 		exe_opcode(op, value, count, stack);
-	
+
 	free(op);
 	free(value);
 }
